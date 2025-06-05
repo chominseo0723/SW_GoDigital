@@ -29,7 +29,7 @@ const PracticeMain = () => {
 
   return (
     <div className="flex flex-col items-center px-5 py-12 gap-12">
-      {/* ── 검색창 ───────────────────────────────── */}
+    
       <form
         onSubmit={e => e.preventDefault()}
         className="w-full max-w-2xl flex"
@@ -52,7 +52,7 @@ const PracticeMain = () => {
 
       <hr className="w-full border-gray-600" />
 
-      {/* ── 연습 카드 그리드 ─────────────────────── */}
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
         {filtered.length ? (
           filtered.map(p => (
@@ -62,9 +62,7 @@ const PracticeMain = () => {
               className="flex flex-col items-center bg-white rounded-3xl p-10 w-90 h-70
                          text-black hover:bg-gray-100 transition"
             >
-              {/* 아이콘 */}
               <div className="text-7xl mb-8">{p.icon}</div>
-              {/* 라벨 */}
               <span className="text-xl font-semibold text-center">{p.name}</span>
             </Link>
           ))
