@@ -6,9 +6,9 @@ const STORE = ['카카오톡', '네이버지도', '배달의민족', '쿠팡', '
 const AppDownloadPractice = () => {
   const nav = useNavigate();
   const [query, setQuery]   = useState('');
-  const [installed, setInstalled] = useState(null);
+  const [installed, setInstalled] = useState(null)
 
-  const results = STORE.filter(app => app.includes(query));
+  const results = STORE.filter(app => app.includes(query))
 
   const install = name => {
     setInstalled(name)
