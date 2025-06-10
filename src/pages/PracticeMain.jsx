@@ -37,7 +37,8 @@ const PracticeMain = () => {
         <input
           type="text"
           placeholder="무엇을 연습하고 싶으신가요?"
-          className="flex-1 px-6 py-4 rounded-l-2xl text-black text-lg focus:outline-none"
+          className="flex-1 px-6 py-4 rounded-l-2xl bg-white text-black border border-gray-400
+          placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-600"
           value={keyword}
           onChange={e => setKeyword(e.target.value)}
         />
@@ -71,6 +72,7 @@ const PracticeMain = () => {
             “{keyword}”에 해당하는 연습이 없습니다.
           </span>
         )}
+
       </div>
     </div>
   );

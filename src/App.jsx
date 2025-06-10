@@ -1,24 +1,51 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'; 
-import Layout from './Layout';                                     
-import Home from './pages/Home';
-import PracticeMain from "./pages/PracticeMain"
-import Login from './pages/Login';
-import Register from './pages/Register';
+// src/App.jsx
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Layout         from './Layout';
+import ProtectedRoute from './components/ProtectedRoute';
 
-const App = () => {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<Layout />}>
+import Home        from './pages/Home';
+import PracticeMain from './pages/PracticeMain';
+import Login       from './pages/Login';
+import Register    from './pages/Register';
+
+/* 각 연습 페이지 */
+import KioskPractice       from './pages/practice/KioskPractice';
+import RemittancePractice  from './pages/practice/RemittancePractice';
+import EmailPractice       from './pages/practice/EmailPractice';
+import CopyPractice        from './pages/practice/CopyPractice';
+import SmartphonePractice  from './pages/practice/SmartphonePractice';
+import AppDownloadPractice from './pages/practice/AppDownloadPractice';
+
+const App = () => (
+  <BrowserRouter>
+    <Routes>
+      {/* --------------------------------------------------------
+         Layout : Navbar + Outlet + Footer
+      --------------------------------------------------------- */}
+      <Route element={<Layout />}>
+        {/* 1) 게스트 전용 라우트 */}
+        <Route path="/login"    element={<Login />} />
+        <Route path="/register" element={<Register />} />
+
+        {/* 2) 로그인 필요 구간 */}
+        <Route element={<ProtectedRoute />}>
           <Route index element={<Home />} />
-           <Route path="practicemain" element={<PracticeMain />} />
-           <Route path="login" element={<Login/>}/>
-           <Route path="register" element={<Register/>}/>
+
+          {/* 연습 메인 + 별칭(practicemain) */}
+          <Route path="practice"     element={<PracticeMain />} />
+          <Route path="practicemain" element={<PracticeMain />} />
+
+          {/* 개별 연습 시뮬레이터 */}
+          <Route path="practice/kiosk"       element={<KioskPractice />} />
+          <Route path="practice/remittance"  element={<RemittancePractice />} />
+          <Route path="practice/email"       element={<EmailPractice />} />
+          <Route path="practice/copy"        element={<CopyPractice />} />
+          <Route path="practice/smartphone"  element={<SmartphonePractice />} />
+          <Route path="practice/appDownload" element={<AppDownloadPractice />} />
         </Route>
-      </Routes>
-    </BrowserRouter>
-  );
-};
+      </Route>
+    </Routes>
+  </BrowserRouter>
+);
 
 export default App;
