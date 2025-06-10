@@ -11,14 +11,14 @@ const AppDownloadPractice = () => {
   const results = STORE.filter(app => app.includes(query));
 
   const install = name => {
-    setInstalled(name);
+    setInstalled(name)
     alert(`${name} 앱이 설치되었습니다!`);
     nav('/practice');
   };
 
   return (
     <div className="flex flex-col items-center gap-10 py-16 px-4">
-      <h1 className="text-3xl font-bold">앱 다운로드 연습</h1>
+      <h1 className="text-3xl font-bold">앱 다운로드 연습</h1> 
 
       <input
         type="text"
