@@ -39,6 +39,8 @@ export const AuthProvider = ({ children }) => {
   const logout = () => {
     logoutUser();
     setUser(null);
+
+    alert('해당 서비스에서 로그아웃 되었습니다')
   };
 
   if (loading) return <div className="h-screen flex items-center justify-center">Loading…</div>;

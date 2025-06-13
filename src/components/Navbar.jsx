@@ -5,7 +5,7 @@ import { useAuth } from '../context/AuthContext';
 const Navbar = () => {
   const { user, logout } = useAuth();
   return (
-    <nav className="w-full flex justify-between items-center px-6 py-4 bg-white text-black shadow-md">
+    <nav className="w-full flex justify-between items-center px-6 py-4 bg-white text-black shadow-md font-bold">
       <Link to="/" className="text-3xl font-bold italic">
         GoDigital
       </Link>

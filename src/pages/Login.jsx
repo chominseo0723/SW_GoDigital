@@ -16,17 +16,17 @@ const Login = () => {
     e.preventDefault();
     setSubmitting(true);
     try {
-      await login(values);          // AuthContext 메서드
-      navigate('/');                // 홈으로 이동
+      await login(values);        
+      navigate('/');             
     } catch (_) {
-      /* error 상태는 Context 쪽에서 이미 setError 호출 */
+   
     } finally {
       setSubmitting(false);
     }
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white px-6">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white px-6 ">
       <h1 className="text-4xl font-bold mb-12">로그인</h1>
 
       <form
