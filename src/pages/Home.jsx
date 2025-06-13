@@ -1,8 +1,7 @@
-// src/pages/Home.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Img1 from '../assets/Img1.png';
-import { useAuth } from '../context/AuthContext';   // ✅ 추가
+import { useAuth } from '../context/AuthContext';   
 
 const Home = () => {
   const { user } = useAuth();                       // 로그인 상태 확인

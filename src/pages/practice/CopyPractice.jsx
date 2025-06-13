@@ -1,4 +1,3 @@
-/* src/pages/practice/CopyPractice.jsx — 확대·여백 개선 */
 import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 

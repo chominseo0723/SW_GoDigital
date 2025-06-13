@@ -1,7 +1,4 @@
-/* ----------------------------------------------------------------
-   File : src/pages/Register.jsx
-   Desc : 회원가입 화면 (백엔드 없이 LocalStorage 기반 fakeAuth 사용)
------------------------------------------------------------------ */
+
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
@@ -21,13 +18,11 @@ const Register = () => {
     try {
       await register({ email, password, nickname });
 
-      /* ✅ 회원가입 성공 알림 */
       alert('회원가입이 완료되었습니다! 이제 로그인해 주세요.');
 
-      /* 로그인 화면으로 이동 (원하면 praticemain 등으로 변경) */
       navigate('/login');
     } catch (_) {
-      /* register() 내부에서 error를 setError 해 주므로 여기선 무시 */
+ 
     }
   };
 

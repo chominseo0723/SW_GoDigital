@@ -1,4 +1,3 @@
-// src/context/AuthContext.jsx
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { registerUser, loginUser, logoutUser, getCurrentUser } from '../utils/fakeAuth';
 

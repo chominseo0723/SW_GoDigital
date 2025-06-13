@@ -1,4 +1,4 @@
-// src/pages/PracticeMain.jsx
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaSearch } from 'react-icons/fa';

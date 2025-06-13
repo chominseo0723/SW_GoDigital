@@ -1,4 +1,4 @@
-// 모든 정보를 LocalStorage에 저장해 두는 매우 단순한 헬퍼
+
 const KEY = 'godigital-users';
 
 export const registerUser = ({ email, password, nickname }) => {
