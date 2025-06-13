@@ -20,29 +20,30 @@ const App = () => (
   <BrowserRouter>
     <Routes>
       <Route element={<Layout />}>
-        {/* ────────────────────────────────────────────────
-            1) 누구나 접근 가능한 라우트
-        ──────────────────────────────────────────────── */}
-        <Route index element={<Home />} />           {/* / */}
+
+        {/* ────────────  1) 누구나 접근 가능  ──────────── */}
+        <Route index element={<Home />} />
+
+        {/* 연습 메인 & 시뮬레이터 ― 로그인 없이도 이용 */}
+        <Route path="practice"            element={<PracticeMain />} />
+        <Route path="practicemain"        element={<PracticeMain />} /> {/* 별칭 */}
+        <Route path="practice/kiosk"      element={<KioskPractice />} />
+        <Route path="practice/remittance" element={<RemittancePractice />} />
+        <Route path="practice/email"      element={<EmailPractice />} />
+        <Route path="practice/copy"       element={<CopyPractice />} />
+        <Route path="practice/smartphone" element={<SmartphonePractice />} />
+        <Route path="practice/appDownload" element={<AppDownloadPractice />} />
+
+        {/* 게스트 전용 화면 */}
         <Route path="login"    element={<Login />} />
         <Route path="register" element={<Register />} />
 
-        {/* ────────────────────────────────────────────────
-            2) 로그인 필요 구간
-        ──────────────────────────────────────────────── */}
+        {/* ────────────  2) 로그인 필요 영역  ──────────── */}
         <Route element={<ProtectedRoute />}>
-          {/* 연습 메인 + 별칭(practicemain) */}
-          <Route path="practice"     element={<PracticeMain />} />
-          <Route path="practicemain" element={<PracticeMain />} />
-
-          {/* 개별 연습 시뮬레이터 */}
-          <Route path="practice/kiosk"        element={<KioskPractice />} />
-          <Route path="practice/remittance"   element={<RemittancePractice />} />
-          <Route path="practice/email"        element={<EmailPractice />} />
-          <Route path="practice/copy"         element={<CopyPractice />} />
-          <Route path="practice/smartphone"   element={<SmartphonePractice />} />
-          <Route path="practice/appDownload"  element={<AppDownloadPractice />} />
+          {/* 예) /mypage 같이 개인정보가 필요한 페이지만 여기에 */}
+          {/* <Route path="mypage" element={<MyPage />} /> */}
         </Route>
+
       </Route>
     </Routes>
   </BrowserRouter>
