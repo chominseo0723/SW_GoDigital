@@ -1,12 +1,33 @@
-# React + Vite
+# GoDigital
+> 시니어(어르신) 대상 디지털 기초 역량 학습 웹 애플리케이션  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## Use Case
+1. 회원가입  
+2. 로그인  
+3. 로그아웃  
+4. 연습(Practice) 목록 조회  
+5. 키워드 검색으로 연습 필터링  
+6. **키오스크 주문** 연습  
+7. **은행 송금** 연습  
+8. **이메일 전송** 연습  
+9. **복사 / 붙여넣기** 연습  
+10. **스마트폰 기본 설정** 연습  
+11. **앱 다운로드** 연습  
+12. 연습 완료 배지 & 진행률 저장  
+13. 피드백(만족도) 제출  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 실행방법
+> 1. 압축폴더 내의 **SW_GoDigital** 폴더를 *VS Code* 로 연다.  
+> 2. 터미널에서 의존성 설치  
+>    ```bash
+>    npm install        # 또는 yarn
+>    ```  
+> 3. 개발 서버 구동  
+>    ```bash
+>    npm run dev        # 또는 yarn dev
+>    ```  
+> 4. 브라우저에서 <http://localhost:5173> 접속 → 메인 화면이 나타나면 성공
