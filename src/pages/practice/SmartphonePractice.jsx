@@ -133,13 +133,13 @@ const SmartphonePractice = () => {
       ) : (
         <button
           onClick={handleNext}
-          className="bg-blue-600 hover:bg-blue-700 text-white px-16 py-6 rounded-2xl text-2xl font-bold"
+          className="bg-blue-500 hover:bg-blue-700 text-white px-16 py-6 rounded-2xl text-2xl font-bold"
         >
           {step === STEPS.length - 1 ? "완료 확인" : "다음 단계"}
         </button>
       )}
     </section>
   );
-};
+}
 
-export default SmartphonePractice;
+export default SmartphonePractice
