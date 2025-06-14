@@ -1,50 +1,48 @@
-# .github/workflows/cd.yml
 name: Continuous Deployment
 
 on:
   push:
-    branches: ["main"]       # main 브랜치에 push될 때 실행
+    branches: ["main"]
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest   # GitHub 호스트 러너
+    runs-on: ubuntu-latest
 
     steps:
-      # 1) 코드 가져오기
+      # 1. 소스 체크아웃
       - uses: actions/checkout@v3
 
-      # 2) Node 환경
+      # 2. Node 20 (react-router 7.x 경고 제거)
       - uses: actions/setup-node@v3
         with:
-          node-version: "20" # React-router 7.x 요구사항(≥20)
+          node-version: "20"
 
-      # 3) 의존성 설치 & 빌드
+      # 3. 의존성 설치 + 빌드
       - name: Install & Build
         run: |
           npm ci
-          npm run build      # → dist/ 생성
+          npm run build          # → dist/
 
-      # 4) GitHub Secret 에 들어 있는 SSH 키를 파일로 저장
+      # 4. SSH 키를 파일로 저장
       - name: Write SSH key
         run: |
           echo "${{ secrets.SERVER_KEY }}" > private_key
           chmod 600 private_key
 
-      # 5) dist 폴더를 EC2로 복사
+      # 5. dist 파일을 EC2로 복사
       - name: Copy build files
         uses: appleboy/scp-action@v0.1.6
         with:
           host:       ${{ secrets.SERVER_HOST }}
           username:   ${{ secrets.SERVER_USERNAME }}
           port:       ${{ secrets.SERVER_SSH_PORT }}
-          key_path:   "./private_key"
+          key_path:   "./private_key"   # ← key_path 로 변경
           source:     "dist/**"
           target:     "/home/ubuntu/SW_GoDigital/"
-          debug:      true            # 단계별 로그
-          connection_timeout: 20s
-          timeout: 120s
+          debug:      true              # 자세한 로그
+          timeout:    120s              # 전체 전송 제한 시간
 
-      # 6) Nginx 재시작
+      # 6. 원격에서 Nginx 재시작
       - name: Deploy to EC2
         uses: appleboy/ssh-action@v0.1.8
         with:
