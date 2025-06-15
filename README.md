@@ -25,13 +25,18 @@
 >    ```bash
 >    git clone https://github.com/chominseo0723/SW_GoDigital.git
 >    ```
->    
-> 3. 터미널에서 의존성 설치  
+> 2. clone 후
+>    ```bash
+>    cd SW_GoDigtal
+>    ```
+> 위 명령어를 통해 SW_GoDigtail 폴더로 들어간 후
+> 
+>3. 의존성 설치  
 >    ```bash
 >    npm install        # 또는 yarn
 >    ```  
-> 4. 개발 서버 구동  
+> 5. 시작
 >    ```bash
 >    npm run dev        # 또는 yarn dev
 >    ```  
-> 5. 브라우저에서 <http://localhost:5173> 접속 → 메인 화면이 나타나면 성공
+> 6. 브라우저에서 <http://localhost:5173> 접속 → 메인 화면이 나타나면 성공
