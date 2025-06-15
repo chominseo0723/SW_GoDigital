@@ -21,6 +21,7 @@
 ---
 
 ## 실행방법
+
 > 1. Git Clone
 >    ```bash
 >    git clone https://github.com/chominseo0723/SW_GoDigital.git
