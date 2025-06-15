@@ -21,13 +21,17 @@
 ---
 
 ## 실행방법
-> 1. 압축폴더 내의 **SW_GoDigital** 폴더를 *VS Code* 로 연다.  
-> 2. 터미널에서 의존성 설치  
+> 1. Git Clone
+>    ```bash
+>    git clone https://github.com/chominseo0723/SW_GoDigital.git
+>    ```
+>    
+> 3. 터미널에서 의존성 설치  
 >    ```bash
 >    npm install        # 또는 yarn
 >    ```  
-> 3. 개발 서버 구동  
+> 4. 개발 서버 구동  
 >    ```bash
 >    npm run dev        # 또는 yarn dev
 >    ```  
-> 4. 브라우저에서 <http://localhost:5173> 접속 → 메인 화면이 나타나면 성공
+> 5. 브라우저에서 <http://localhost:5173> 접속 → 메인 화면이 나타나면 성공
