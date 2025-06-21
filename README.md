@@ -21,14 +21,16 @@
 ---
 
 ## 실행방법
-
+## 개발환경 요구사항
+- Node.js가 설치되어있어야합니다
+  
 > 1. Git Clone
 >    ```bash
 >    git clone https://github.com/chominseo0723/SW_GoDigital.git
 >    ```
 > 2. clone 후
 >    ```bash
->    cd SW_GoDigtal
+>    cd SW_GoDigital
 >    ```
 > 위 명령어를 통해 SW_GoDigtail 폴더로 들어간 후
 > 
